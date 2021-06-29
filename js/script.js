@@ -1,3 +1,5 @@
+// Phase One
+
 // Create a variable to "Name" input field
 const nameInput = document.getElementById('name')
 //Give name input field focus
@@ -18,3 +20,5 @@ jobRole.addEventListener('change', (e) => {
     otherJobRole.style.display = 'none'
   }
 })
+
+
