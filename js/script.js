@@ -28,10 +28,21 @@ jobRole.addEventListener('change', (e) => {
 const shirtDesign = document.getElementById('design')
 const shirtColor = document.getElementById('color')
 
+// create children property here
+const colorOption = shirtColor.children
+
 // Disable shirtColor
 shirtColor.disabled = true
 
 shirtDesign.addEventListener('change', (e) => {
   //Disable the previously enabled shirtColor element
   shirtColor.disabled = false
+
+  for (let i = 0; i < colorOption.length; i++) {
+    if (colorOption[i].getAttribute('data-theme') === 'js puns') {
+      colorOption[i].style.display = 'inherit'
+    } else {
+      colorOption[i].style.display = 'none'
+    }
+  }
 })
