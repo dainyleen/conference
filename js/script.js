@@ -7,7 +7,14 @@ nameInput.focus()
 const jobRole = document.getElementById('title')
 const otherJobRole = document.getElementById('other-job-role')
 
-//Hide "Other Job Role" by default
+// Hide "Other Job Role" by default
 otherJobRole.style.display = 'none'
 
-
+// Display "Other Job Role" when selected
+jobRole.addEventListener('change', (e) => {
+  if (e.target.value == 'other') {
+    otherJobRole.style.display = 'inherit'
+  } else {
+    otherJobRole.style.display = 'none'
+  }
+})
