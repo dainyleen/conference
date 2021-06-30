@@ -43,9 +43,9 @@ shirtDesign.addEventListener('change', (e) => {
     // Loop over the option color
     for (let i = 0; i < colorOption.length; i++) {
       if (colorOption[i].getAttribute('data-theme') === 'js puns') {
-        colorOption[i].style.display = 'inherit'
+        colorOption[i].hidden = false
       } else {
-        colorOption[i].style.display = 'none'
+        colorOption[i].hidden = true
       }
     }
   } else if (e.target.value === 'heart js') {
@@ -53,9 +53,9 @@ shirtDesign.addEventListener('change', (e) => {
     // Loop over the option color
     for (let i = 0; i < colorOption.length; i++) {
       if (colorOption[i].getAttribute('data-theme') === 'heart js') {
-        colorOption[i].style.display = 'inherit'
+        colorOption[i].hidden = false
       } else {
-        colorOption[i].style.display = 'none'
+        colorOption[i].hidden = true
       }
     }
   } else {
