@@ -1,6 +1,5 @@
 // Phase One
 
-
 // Create a variable to "Name" input field
 const nameInput = document.getElementById('name')
 //Give name input field focus
@@ -62,3 +61,12 @@ shirtDesign.addEventListener('change', (e) => {
     colorOption[i].style.display = 'none'
   }
 })
+
+// Phase Three
+
+// Register for activities section
+const chooseActivities = document.getElementById('activities')
+let totalCost = 0
+
+
+
