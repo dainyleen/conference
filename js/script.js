@@ -1,6 +1,5 @@
 // Phase One
 
-
 // Create a variable to "Name" input field
 const nameInput = document.getElementById('name')
 //Give name input field focus
@@ -43,9 +42,9 @@ shirtDesign.addEventListener('change', (e) => {
     // Loop over the option color
     for (let i = 0; i < colorOption.length; i++) {
       if (colorOption[i].getAttribute('data-theme') === 'js puns') {
-        colorOption[i].style.display = 'inherit'
+        colorOption[i].hidden = false
       } else {
-        colorOption[i].style.display = 'none'
+        colorOption[i].hidden = true
       }
     }
   } else if (e.target.value === 'heart js') {
@@ -53,12 +52,33 @@ shirtDesign.addEventListener('change', (e) => {
     // Loop over the option color
     for (let i = 0; i < colorOption.length; i++) {
       if (colorOption[i].getAttribute('data-theme') === 'heart js') {
-        colorOption[i].style.display = 'inherit'
+        colorOption[i].hidden = false
       } else {
-        colorOption[i].style.display = 'none'
+        colorOption[i].hidden = true
       }
     }
   } else {
     colorOption[i].style.display = 'none'
   }
 })
+
+// Phase Three
+
+// Register for activities section
+const chooseActivities = document.getElementById('activities')
+let totalCost = 0
+const costOfActivity = document.getElementById('activities-cost')
+// Event Listener
+chooseActivities.addEventListener('change', (e) => {
+  // Create a variable to store a reference to "data-cost" attribute
+  const price = parseInt(e.target.getAttribute('data-cost'))
+  // Create a conditional to determine if e.target was checked or unchecked
+  if (e.target.checked) {
+    totalCost += price
+    costOfActivity.innerHTML = `Total: \$${totalCost}`
+  } else {
+    totalCost -= price
+    costOfActivity.innerHTML = `Total: \$${totalCost}`
+  }
+})
+
