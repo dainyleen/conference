@@ -82,3 +82,38 @@ chooseActivities.addEventListener('change', (e) => {
   }
 })
 
+// Phase Three
+
+// Create variables to reference the elements needed for payment section
+const payment = document.getElementById('payment')
+let paymentDivs = []
+paymentDivs.push(document.getElementById('credit-card'))
+paymentDivs.push(document.getElementById('paypal'))
+paymentDivs.push(document.getElementById('bitcoin'))
+
+// Use payment variable to target the element's second child element and give it "selected" property
+payment[1].selected = true
+
+// Hide/Show payment 
+function hideShowPayment(types, name) {
+  for (let i = 0; i < types.length; i++) {
+    if (types[i].getAttribute('id') === name) {
+      types[i].hidden = false
+    } else {
+      types[i].hidden = true
+    }
+  }
+}
+
+// Call the function
+hideShowPayment(paymentDivs, 'credit-card')
+
+payment.addEventListener('change', (e) => {
+  if (e.target.value === 'credit-card') {
+    hideShowPayment(paymentDivs, 'credit-card')
+  } else if (e.target.value === 'paypal') {
+    hideShowPayment(paymentDivs, 'paypal')
+  } else {
+    hideShowPayment(paymentDivs, 'bitcoin')
+  }
+})
