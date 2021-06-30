@@ -82,3 +82,10 @@ chooseActivities.addEventListener('change', (e) => {
   }
 })
 
+// Phase Three
+
+// Create variables to reference the elements needed for payment section
+let paymentDivs = []
+paymentDivs.push(document.getElementById('credit-card'))
+paymentDivs.push(document.getElementById('paypal'))
+paymentDivs.push(document.getElementById('bitcoin'))
