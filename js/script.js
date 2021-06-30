@@ -93,15 +93,27 @@ paymentDivs.push(document.getElementById('bitcoin'))
 
 // Use payment variable to target the element's second child element and give it "selected" property
 payment[1].selected = true
-hideShowPayment(paymentDivs, 'credit-card')
 
 // Hide/Show payment 
-function hideShowPayment(paymentTypes, name) {
-  for (let i = 0; i < paymentTypes.length; i++) {
-    if (paymentTypes[i].getAttribute('id') === name) {
-      paymentTypes[i].hidden = false
+function hideShowPayment(types, name) {
+  for (let i = 0; i < types.length; i++) {
+    if (types[i].getAttribute('id') === name) {
+      types[i].hidden = false
     } else {
-      paymentTypes[i].hidden = true
+      types[i].hidden = true
     }
   }
 }
+
+// Call the function
+hideShowPayment(paymentDivs, 'credit-card')
+
+payment.addEventListener('change', (e) => {
+  if (e.target.value === 'credit-card') {
+    hideShowPayment(paymentDivs, 'credit-card')
+  } else if (e.target.value === 'paypal') {
+    hideShowPayment(paymentDivs, 'paypal')
+  } else {
+    hideShowPayment(paymentDivs, 'bitcoin')
+  }
+})
