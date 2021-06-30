@@ -67,6 +67,18 @@ shirtDesign.addEventListener('change', (e) => {
 // Register for activities section
 const chooseActivities = document.getElementById('activities')
 let totalCost = 0
-
-
+const costOfActivity = document.getElementById('activities-cost')
+// Event Listener
+chooseActivities.addEventListener('change', (e) => {
+  // Create a variable to store a reference to "data-cost" attribute
+  const price = parseInt(e.target.getAttribute('data-cost'))
+  // Create a conditional to determine if e.target was checked or unchecked
+  if (e.target.checked) {
+    totalCost += price
+    costOfActivity.innerHTML = `Total: \$${totalCost}`
+  } else {
+    totalCost -= price
+    costOfActivity.innerHTML = `Total: \$${totalCost}`
+  }
+})
 
