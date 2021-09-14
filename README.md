@@ -11,4 +11,4 @@ https://dainyleen.github.io/conference
 4. Practiced manipulating the DOM 
 
 
-###### The project concept is from TeamTreehouse - Tech Degree curriculum
+
